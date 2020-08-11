@@ -13,7 +13,7 @@ fi
 
 az login --service-principal -u ${INPUT_SERVICE_PRINCIPAL} -p ${INPUT_SERVICE_PRINCIPAL_PASSWORD} --tenant ${INPUT_TENANT}
 
-az acr run -f build.yaml \
+az acr run -f /build.yaml \
   -r ${INPUT_BUILDX_REGISTRY} \
   --set BUILD_TARGET=${INPUT_PUSH_TARGET}:${INPUT_PUSH_TAG} \
   --set BUILD_DOCKERFILE=${INPUT_DOCKERFILE} \
