@@ -14,14 +14,17 @@ inputs:
   tenant:
     description: 'Azure Container Registry tenant'
     required: true
-  buildx_registry:
-    description: 'The name of the ACR (without .azurecr.io) containing buildx'
+  registry:
+    description: 'The name of the ACR (without .azurecr.io)'
     required: true
-  push_target:
-    description: 'Push target without tag'
+  image:
+    description: 'Image name'
     required: true
-  push_tag:
+  tag:
     description: 'Image tag. Default to the commit SHA'
+    required: false
+  update_latest:
+    description: 'The image will have latest tag if set'
     required: false
   branch:
     description: 'Branch to build from. Defaults to master'

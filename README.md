@@ -1,3 +1,2 @@
 # ACRAutoBuildAction
-
-https://github.com/Azure/acr/tree/master/docs/tasks/buildx
+https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-reference-yaml

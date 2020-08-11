@@ -4,3 +4,4 @@ steps:
     cache: enabled
   - push:
     - $Registry/{{.Values.BUILD_IMAGE}}:{{.Values.BUILD_TAG}}
+    - $Registry/{{.Values.BUILD_IMAGE}}:latest
