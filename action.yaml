@@ -1,0 +1,40 @@
+name: 'Azure Container Registry Auto Build'
+author: 'Zichao Qi'
+branding:
+  icon: 'code'
+  color: 'blue'
+description: 'Use ACR to build a container image'
+inputs:
+  service_principal:
+    description: 'Service Principal with Contributor role on the ACR'
+    required: true
+  service_principal_password:
+    description: 'Service Principal password'
+    required: true
+  tenant:
+    description: 'Azure Container Registry tenant'
+    required: true
+  buildx_registry:
+    description: 'The name of the ACR (without .azurecr.io) containing buildx'
+    required: true
+  push_target:
+    description: 'Push target without tag'
+    required: true
+  push_tag:
+    description: 'Image tag. Default to the commit SHA'
+    required: false
+  branch:
+    description: 'Branch to build from. Defaults to master'
+    required: false
+  github_access_token:
+    description: 'Token to access to Github repo'
+    required: false
+  build_context:
+    description: Build context in the Github repo'
+    required: true
+  dockerfile:
+    description: 'The location of the Dockerfile; defaults to Dockerfile'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

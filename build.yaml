@@ -1,0 +1,9 @@
+version: v1.1.0
+steps:
+  - cmd: >-
+      {{.Run.Registry}}/buildx
+      build --push
+      --tag {{.Values.BUILD_TARGET}}
+      --file {{.Values.BUILD_DOCKERFILE}}
+      {{.Values.BUILDX_ARGS}}
+      {{.Values.BUILD_CONTEXT}}
