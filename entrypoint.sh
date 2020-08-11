@@ -12,9 +12,6 @@ else
 fi
 
 az login --service-principal -u ${INPUT_SERVICE_PRINCIPAL} -p ${INPUT_SERVICE_PRINCIPAL_PASSWORD} --tenant ${INPUT_TENANT}
-echo ${INPUT_BUILDX_REGISTRY}
-echo ${INPUT_DOCKERFILE}
-echo ${GITHUB_URL}/${GITHUB_REPOSITORY}.git#${INPUT_BRANCH}:${INPUT_BUILD_CONTEXT}
 
 az acr run -f build.yaml \
   -r ${INPUT_BUILDX_REGISTRY} \
