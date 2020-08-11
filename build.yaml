@@ -1,6 +1,6 @@
 version: v1.1.0
 steps:
-  - build: -t $Registry/{{.Values.BUILD_IMAGE}}:$ID -f {{.Values.BUILD_DOCKERFILE}} {{.Values.BUILD_CONTEXT}}
+  - build: -t $Registry/{{.Values.BUILD_IMAGE}}:{{.Values.BUILD_TAG}} -f {{.Values.BUILD_DOCKERFILE}} {{.Values.BUILD_CONTEXT}}
     cache: enabled
   - push:
     - $Registry/{{.Values.BUILD_IMAGE}}:{{.Values.BUILD_TAG}}
