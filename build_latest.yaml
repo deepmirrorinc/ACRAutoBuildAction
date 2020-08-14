@@ -1,7 +1,9 @@
 version: v1.1.0
+stepTimeout: 28800
 steps:
   - build: -t $Registry/{{.Values.BUILD_IMAGE}}:{{.Values.BUILD_TAG}} -t $Registry/{{.Values.BUILD_IMAGE}}:latest -f {{.Values.BUILD_DOCKERFILE}} {{.Values.BUILD_CONTEXT}}
     cache: enabled
+    timeout: 28800
   - push:
     - $Registry/{{.Values.BUILD_IMAGE}}:{{.Values.BUILD_TAG}}
     - $Registry/{{.Values.BUILD_IMAGE}}:latest

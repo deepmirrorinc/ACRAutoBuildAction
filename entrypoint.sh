@@ -26,4 +26,5 @@ az acr run -f ${BUILD_FILE} \
   --set BUILD_TAG=${INPUT_TAG} \
   --set BUILD_DOCKERFILE=${INPUT_DOCKERFILE} \
   --set BUILD_CONTEXT=${GITHUB_URL}/${GITHUB_REPOSITORY}.git#${INPUT_BRANCH}:${INPUT_BUILD_CONTEXT} \
+  --timeout=28800 \
   /dev/null
