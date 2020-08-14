@@ -18,7 +18,7 @@ inputs:
     description: 'The name of the ACR (without .azurecr.io)'
     required: true
   agentpool:
-    description: 'The name of agent pool'.
+    description: 'The name of agent pool'
     required: false
   image:
     description: 'Image name'
