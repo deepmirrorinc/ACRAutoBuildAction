@@ -11,7 +11,7 @@ else
   GITHUB_URL=https://${INPUT_GITHUB_ACCESS_TOKEN}@github.com
 fi
 
-if [ -z "${INPUT_UPDATE_LATEST}" || "${INPUT_TAG}" == "latest" ]
+if [ -z "${INPUT_UPDATE_LATEST}" ] || [ "${INPUT_TAG}" == "latest" ]
 then
   BUILD_FILE=/build.yaml
 else
