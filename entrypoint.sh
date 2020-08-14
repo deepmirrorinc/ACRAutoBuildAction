@@ -20,8 +20,15 @@ fi
 
 az login --service-principal -u ${INPUT_SERVICE_PRINCIPAL} -p ${INPUT_SERVICE_PRINCIPAL_PASSWORD} --tenant ${INPUT_TENANT}
 
+if [ -z "${INPUT_AGENTPOOL}" ]
+then
+  REGISTRY_ARGS="-r ${INPUT_REGISTRY}"
+else
+  REGISTRY_ARGS="-r ${INPUT_REGISTRY} --agent-pool ${INPUT_AGENTPOOL}"
+fi
+
 az acr run -f ${BUILD_FILE} \
-  -r ${INPUT_REGISTRY} \
+  ${REGISTRY_ARGS} \
   --set BUILD_IMAGE=${INPUT_IMAGE} \
   --set BUILD_TAG=${INPUT_TAG} \
   --set BUILD_DOCKERFILE=${INPUT_DOCKERFILE} \
